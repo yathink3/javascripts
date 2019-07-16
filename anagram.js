@@ -7,11 +7,11 @@ var str="";
 if(str1.length==str2.length){
     st1.sort();
     st2.sort();
-    console.log(st1);
-    console.log(st2);
     for(var i=0;i<st1.length;i++){
         if(st1[i]!=st2[i]) str="not";
     }
 }
 else str="";
 console.log(str1+" & "+str2+" are "+str+" anagrams");
+module.exports.a=str1;
+module.exports.b=str2;

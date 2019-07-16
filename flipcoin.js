@@ -1,5 +1,6 @@
 var r = require('readline-sync');
-var n=r.question("number of times flip coins:");
+var n=r.questionInt("number of times flip coins:");
+module.exports.n=n;
 var k=0;
 for(var i=0;i<n;i++){
     var rno=Math.random();

@@ -1,5 +1,6 @@
-var n=parseInt(process.argv[2]);
+//var n=parseInt(process.argv[2]);
 var r=require('readline-sync');
+var n=r.questionInt('enter a number:');
 function que(f,l){
     if(f==l) console.log("your guessed number is "+f);
     else{
@@ -10,11 +11,5 @@ function que(f,l){
         que(f,l);
     }
 }
+module.exports.n=n;
 que(0,n-1);
-
-
-var fs=require('fs');
-fs.readFile('Input.txt', (err, data) => { 
-    if (err) throw err; 
-    console.log(data.toString()); 
-}) ;

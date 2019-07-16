@@ -11,8 +11,9 @@ function binarysearch(key,arr){
 }
 var r=require('readline-sync');
 var fs=require('fs');
-data=fs.readFileSync('input.txt');
-var arr=(data.toString()).split(" ");
+data=(fs.readFileSync('input.txt')).toString();
+var arr=data.split(" ");
+module.exports.arr=arr;
 arr.sort();
 console.log(arr);
 var key=r.question('enter the key value:');
