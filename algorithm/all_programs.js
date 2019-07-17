@@ -1,17 +1,43 @@
-var r=require('readline-sync');
+/*
+a.Desc -> Create Utility Class having following static methods
+    i.binarySearch method for integer
+    ii.binarySearch method for String
+    iii.insertionSort method for integer
+    iv.insertionSort method for String
+    v.bubbleSort method for integer
+    vi.bubbleSort method for String
+b.I/P -> Write main function to call the utility function
+c.Logic -> Check using Stopwatch the Elapsed Time for every method call
+d.O/P -> Output the Search and Sorted List. More importantly print elapsed 
+    time performance in descending order
+*/
+//it is library module ,used to take input from user by using keyboard
+var r=require('readline-sync'); 
+//crete a class with name program
 class program{
+    //creating a static function to take key and arraay
     static  binarysearch(key,arr){
+        //assaining the passed arrys length to n
         var n=arr.length;
+        //assaigning f to starting oof array and l to end of array
         var f=0,l=n-1,mid;
+        //while loop will run until  the f less than or equal to l
         while(f<=l){
+            //assaigning mid form between the f and l
             mid=parseInt((f+l)/2);
+            //if the users key value is equals to the array middle value then return it
             if(key==arr[mid]) return mid;
+            //if key value is less than the array of mid then assaign mid-1 to the l
             else if(key<arr[mid]) l=mid-1;
+            //else assaign mid+1 to the f
             else f=mid+1;
         }
+        //return key not found
         return "not found";
     }
+    //static function for insertion sort
     static insertionsort(arr){
+        //
         var n=arr.length;
         var temp;
         for(var i=1;i<n;i++){

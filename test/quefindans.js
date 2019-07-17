@@ -1,5 +1,5 @@
 var e=require('chai').expect;
-var n=require('D://javascripts//quefindans.js').n;
+var n=require('D://javascripts//algorithm//quefindans.js').n;
 describe('que to find answer',function(){
     it('n is power of 2',function(){
        while(n%2==0){
