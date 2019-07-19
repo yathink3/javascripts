@@ -1,7 +1,4 @@
-//var n=parseInt(process.argv[2]);
-var r=require('readline-sync');
-var n=r.questionInt('enter a number:');
-function que(f,l){
+let que=(f,l)=>{
     if(f==l) console.log("your guessed number is "+f);
     else{
         var mid=parseInt((f+l)/2);
@@ -11,5 +8,7 @@ function que(f,l){
         que(f,l);
     }
 }
+let r=require('readline-sync');
+let n=r.questionInt('enter a number:');
 module.exports.n=n;
 que(0,n-1);
