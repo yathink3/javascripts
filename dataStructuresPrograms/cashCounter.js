@@ -7,13 +7,20 @@
     d.O/P -> True or False to Show Arithmetic Expression is balanced or not.
 */
 //importing linkedlist modules
-let Queue=require('./Queue');
+let Queue=require('./utility/queue');
+//creating object of Queue
+let q=new Queue();
 //importing readline-sync
-let q=new Queue(1000);
 let r=require('readline-sync');
 //read an queue size from user
 let n=r.question("enter the size :");  
-for(let i=n;i--;)  q.insert(r.question("enter the amount :"),r.question("enter the purpose(D/W):"));
+//this for loop will insert the data ino queue
+while(n--)  q.insert(r.question("enter the amount :"),r.question("enter the purpose(D/W):"));
+console.log('at first ');
 console.log(q.getArray());
-for(let i=n;i--;)  q.delete();
-console.log(q.getamount());
+//bank will manages the cashcounter
+q.bank();
+console.log('at last ');
+console.log(q.getArray());
+//it will return the at last amount in the bank
+console.log(q.getAmount());

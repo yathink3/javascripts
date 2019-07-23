@@ -6,22 +6,15 @@
     d.O/P -> The List of Numbers to a File.
 */
 //importing linkedlist modules
-let linkedList=require('./linkedList');
-//importing files modules
-let fs=require('fs');
-//readf takes filepath and reads the data from file and returns the splitted words in array
-let readF=filePath=>{
-    let buff=fs.readFileSync(filePath);
-    return buff.toString().split(" ");
-}
-//writef takes filepath and an array and copies the data to the specified file
-let writeF=(filePath,arr)=>fs.writeFileSync(filePath,arr.join(" "));
+let linkedList=require('./utility/linkedList');
+//importing files operataions
+let f=require('./utility/files');
 //importing readline-sync
 let r=require('readline-sync');
 //creating an object of linkedlist
 let ls=new linkedList();
 //adding array elements to the linked list
-readF('../input.txt').forEach(element => ls.add(element));
+f.readF('../input.txt').forEach(element => ls.add(element));
 console.log(ls.getArray());
 //sorting the linked list elements
 ls.sort();
@@ -30,4 +23,4 @@ let data=r.question('enter the data to be search:');
 ls.orderedCheck(data);
 console.log(ls.getArray());
 //writing files back to the list
-writeF('../input.txt',ls.getArray());
+f.writeF('../input.txt',ls.getArray());

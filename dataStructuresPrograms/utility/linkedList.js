@@ -25,41 +25,12 @@ module.exports=class LinkedList{
     //add operation will add data to the end of the list
     add(data){  
         let newNode = new Node(data);
-        if(!this.head){ 
-             this.head = newNode;
-        }
+        if(!this.head) this.head = newNode;
         else{
             let temp = this.head;
             while(temp.next !== null)  temp = temp.next;
             temp.next = newNode;
         }
-    }
-    getAt (index){
-        let counter = 0;
-        let temp = this.head;
-        while (temp) {
-            if (counter === index) 
-               return temp.data;
-            counter++;
-            temp = temp.next;
-        }
-        return null;
-    }
-    //insertat operation will add the element at specified position
-    insertAt(data, index){
-        if (!this.head) {
-            this.head = new Node(data);
-            return;
-        }
-        if (index === 0) {
-            this.head = new Node(data, this.head);
-            return;
-        }
-        const previous = this.getAt(index - 1);
-        let newNode = new Node(data);
-        newNode.next = previous.next;
-        previous.next = newNode;       
-        return this.head
     }
     //pop operation will delete the element element at front end returns the element
     pop(){
@@ -151,23 +122,7 @@ module.exports=class LinkedList{
         }
         return arr;
     }
-    //deleteAt operation will delete the item at specified location
-    deleteAt (index){
-        let count=0;
-       let temp=this.head;
-        if(index===count)
-            this.head=temp.next;
-        else{ 
-            let temppre;
-            while(count!==index ) {
-                 temppre=temp;
-                 if(temp.next===null) break;
-                 temp=temp.next;
-                 count++;
-            }
-            temppre.next=temp.next;  
-        }
-    }
+    
     //deletelist operation will delete the entire linked list  
     deleteList (){
         this.head = null;

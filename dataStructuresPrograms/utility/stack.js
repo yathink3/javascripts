@@ -24,7 +24,7 @@ module.exports=class Stack{
    
     //pop operation will pop the element at top returns the element
     pop(){
-        if(!this.top)   return;
+        if(!this.top)   return "underflow";
         let temp=this.top;
         this.top = this.top.down;
         return temp.data;
@@ -34,24 +34,5 @@ module.exports=class Stack{
         if(!this.top) return true;
         return false;
     }
-   
-
-    
-    //getArray operation will returns the array format of stack
-    getArray(){
-        let temp = this.top;
-        let arr=[];
-        while (temp) {
-            arr.push(temp.data);
-            temp = temp.down;
-        }
-        return arr;
-    }
-    
-    //deletelist operation will delete the entire stack  
-    deletestack (){
-        this.top = null;
-    }
-    
     
 }

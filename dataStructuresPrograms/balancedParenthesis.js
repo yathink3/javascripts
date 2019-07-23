@@ -6,7 +6,7 @@
     d.O/P -> True or False to Show Arithmetic Expression is balanced or not.
 */
 //importing stack modules
-let stack=require('./stack');
+let stack=require('./utility/stack');
 //importing readline-sync
 let s=new stack();
 let r=require('readline-sync');
