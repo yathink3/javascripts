@@ -10,22 +10,13 @@
 
 /*
 the anagram function will check whether the given strings are anagram or not
-here first it will assign str to null & then take two arrays as st1 and st2 by splitting into str1 and str2
-if the length of str1 and str2 are equal then only checks the following otherwise return false
-if their size are equal then sorted two arrays and then joins them if they are equal returns true else return false
+string by splitting into array and then sorted and join them
+returned two string sorted and if they are equal returns true else return false
 */
 let anagram=(str1,str2)=>{
-    let st1=str1.split("");
-    let st2=str2.split("");
-    if(str1.length==str2.length){
-        st1.sort();
-        st2.sort();
-        if(st1.join()==st2.join()) return true;
-        else return false;
-    }
-    else return false;
+    let sortedstr=(str)=> str.split('').sort().join('');
+    return sortedstr(str1) == sortedstr(str2);
 }
-
 let r=require('readline-sync');
 let str1=r.question("enter a string1:");
 let str2=r.question("enter a string2:");
