@@ -1,0 +1,37 @@
+[{
+    "rice": [{
+        "name": "r1",
+        "weight": 20,
+        "price": 25
+    }, {
+        "name": "r2",
+        "weight": 10,
+        "price": 30
+    }, {
+        "name": "r3",
+        "weight": 20,
+        "price": 25
+    }, {
+        "name": "r4",
+        "weight": 20,
+        "price": 25
+    }],
+    "pulse": [{
+        "name": "p1",
+        "weight": 10,
+        "price": 35
+    }, {
+        "name": "p2",
+        "weight": 15,
+        "price": 40
+    }],
+    "wheat": [{
+        "name": "w1",
+        "weight": 30,
+        "price": 45
+    }, {
+        "name": "w2",
+        "weight": 10,
+        "price": 40
+    }]
+}]
