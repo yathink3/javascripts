@@ -1,0 +1,17 @@
+[{
+    "name": "mahindra",
+    "shares": 200,
+    "price": 25000
+}, {
+    "name": "reliance",
+    "shares": 100,
+    "price": 12500
+}, {
+    "name": "hp",
+    "shares": 150,
+    "price": 25010
+}, {
+    "name": "apple",
+    "shares": 20,
+    "price": 25000
+}]
