@@ -10,9 +10,7 @@
 //importing inventary class
 let inventory=require('./utility/inventoryDataManagement')
 //creating object of inventory
-let inv=new inventory();
-//parsing json file into json object
-inv.jsonParse("./inventoryDataManagement.json");
+let inv = new inventory("./inventoryDataManagement.json");
 //calulting value
 inv.calculateAll();
 //displaying json object

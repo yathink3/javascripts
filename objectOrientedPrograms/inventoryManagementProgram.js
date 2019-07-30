@@ -10,18 +10,16 @@
  * @since : 26-july-2019
  *******************************************************************************************************************/
 //importing inventary class
-let inventary=require('./utility/inventoryDataManagement')
+let inventary = require('./utility/inventoryDataManagement')
 //creating inventory object
-let inv=new inventary();
-//parsing json file to bject
-inv.jsonParse("./inventoryDataManagement.json");
+let inv = new inventary("./inventoryDataManagement.json");
 //calculating value
 inv.calculateAll();
 //adding category
 inv.addcategory("maze");
 //adding item
 inv.additem("maze", 'm1', 78, 89);
-inv.additem("mazer","m2",67,89);
+inv.additem("mazer", "m2", 67, 89);
 //save json file
 inv.jsonSave();
 console.log(inv.display());

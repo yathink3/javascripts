@@ -1,0 +1,49 @@
+[{
+    "name": "manoj1",
+    "id": 123,
+    "specialization": "eye",
+    "appointment": "AM",
+    "consulted": 2
+}, {
+    "name": "manoj2",
+    "id": 124,
+    "specialization": "skin",
+    "appointment": "PM",
+    "consulted": 0
+}, {
+    "name": "manoj3",
+    "id": 125,
+    "specialization": "eye",
+    "appointment": "BOTH",
+    "consulted": 0
+}, {
+    "name": "manoj4",
+    "id": 126,
+    "specialization": "bone",
+    "appointment": "AM",
+    "consulted": 3
+}, {
+    "name": "manoj5",
+    "id": 127,
+    "specialization": "eye",
+    "appointment": "AM",
+    "consulted": 2
+}, {
+    "name": "manoj6",
+    "id": 128,
+    "specialization": "skin",
+    "appointment": "BOTH",
+    "consulted": 0
+}, {
+    "name": "manoj7",
+    "id": 129,
+    "specialization": "eye",
+    "appointment": "PM",
+    "consulted": 0
+}, {
+    "name": "manoj8",
+    "id": 130,
+    "specialization": "bone",
+    "appointment": "AM",
+    "consulted": 3
+}]

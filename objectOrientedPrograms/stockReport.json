@@ -1,17 +1,19 @@
 [{
     "name": "mahindra",
-    "shares": 200,
-    "price": 25000
+    "shares": 87,
+    "price": 100,
+    "time": "2019-07-29T08:38:41.308Z"
 }, {
     "name": "reliance",
     "shares": 100,
     "price": 12500
 }, {
-    "name": "hp",
-    "shares": 150,
-    "price": 25010
-}, {
     "name": "apple",
-    "shares": 20,
-    "price": 25000
+    "shares": 54,
+    "price": 250,
+    "time": "2019-07-29T08:38:41.308Z"
+}, {
+    "name": "hai",
+    "shares": 56,
+    "price": 789
 }]
