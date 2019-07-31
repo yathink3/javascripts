@@ -14,14 +14,14 @@
 //importing clinic class
 let Clinic = require("./utility/clinique")
 //creating clinic object
-let c = new Clinic();
+let clinic = new Clinic();
 console.log("---welcome to clinic---")
 //managing the patient appointment
-c.patientAppointment();
+clinic.patientAppointment();
 //dispalying the popular doctores
-console.log(c.popularDoctor())
+console.log(clinic.popularDoctor())
 //displaying the popular specialization
-console.log(c.popularSpecialization());
+console.log(clinic.popularSpecialization());
 console.log("doctor detailes")
 //printing the doctor detailes
-console.log(c.printDoctor());
+console.log(clinic.printDoctor());

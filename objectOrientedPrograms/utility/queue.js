@@ -78,5 +78,5 @@ module.exports = class Queue {
         }
         return count;
     }
-    
+
 }

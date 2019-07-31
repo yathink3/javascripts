@@ -10,16 +10,16 @@
 //importing the adddressbook claas
 let AddressBook = require('./utility/addressBook')
 //creating a object of the addressbook
-let a = new AddressBook();
+let addressObject = new AddressBook();
 //parsing json into json object
-a.jsonParse("./addressBook.json")
+addressObject.jsonParse("./addressBook.json")
 //adding address to the addressbook
-a.addAddress("mohan", "raj", "120", "whitefield");
+addressObject.addAddress("mohan", "raj", "120", "whitefield");
 //searching the address
-a.search("manoj");
+addressObject.search("manoj");
 //update the data of the addressbook
-a.update("manoj kumar");
+addressObject.update("manoj kumar");
 //deleting the data in the addressbook
-a.delet("mohan raj");
+addressObject.delet("mohan raj");
 //save data back the json file
-a.jsonSave();
+addressObject.jsonSave();

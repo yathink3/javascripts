@@ -10,11 +10,11 @@
  *******************************************************************************************************************/
 
 
-//importing queue
-let queue = require('./utility/queue');
 //importing  deckOfCardsManagement
 let deck = require('./utility/deckOfCardsManagement');
 //collecting cards and shuffled
 cards = deck.shuffle(deck.getCards());
 //cards are distributed in queue in 4X9
-console.log(deck.distributeInQueue(cards, 4, 9, queue).getArray());
+(deck.distributeInQueue(cards, 4, 9)).getArray().forEach(element => {
+    console.log(element.getArray())
+});

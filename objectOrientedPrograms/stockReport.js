@@ -9,36 +9,21 @@
  * @since : 26-july-2019
  *******************************************************************************************************************/
 //importing stock class
-let stock = require('./utility/stock')
-let r = require('readline-sync');
+let Stock = require('./utility/stock')
+let read = require('readline-sync');
 //creating stock object
-let s = new stock("./stockReport.json");
+let stock = new Stock("./stockReport.json");
 //reading name shares and price
-let name = r.question('enter stock name:');
-let shares = r.questionInt('enter stock shares:');
-let price = r.questionInt('enter stock price:')
+let name = read.question('enter stock name:');
+let shares = read.questionInt('enter stock shares:');
+let price = read.questionInt('enter stock price:')
 //adding stuffs
-s.add(name, shares, price);
+stock.add(name, shares, price);
 //deleting data
-s.delete("hp")
+stock.delete("hp")
 //print report
-s.printReport();
+stock.printReport();
 //save the data back to the file
-s.save();
+stock.save();
 //print valueof
-console.log(s.valueOf());
-
-
-
-
-
-
-
-
-
-
-/*
-mydata=[];
-fs.readFileSync('./file.txt').toString().split("\r\n").forEach(element => mydata.push(element.split(" ")));
-this.stocks=mydata;
-*/
+console.log(stock.valueOf());

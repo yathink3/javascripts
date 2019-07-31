@@ -10,21 +10,21 @@ getCards = () => {
     return cards;
 }
 //distributeinqueue will distribute the cards in queue format
-distributeInQueue = (cards, n, k = parseInt(52 / n) + 1, format) => {
+distributeInQueue = (cards, n, k = parseInt(52 / n) + 1) => {
     try {
-        let person = new format();
+        let queue = require('./queue');
+        let person = new queue();
         for (i = 0; i < n; i++) {
-            let single = new format();
+            let single = new queue();
             for (j = i; j < i + n * k && j < 52; j = j + n)
                 single.insert(cards[j]);
             single.sort(rank);
-            person.insert(single.getArray());
+            person.insert(single);
         }
         return person;
     } catch (e) {
-        return "cards are out of bound"
+        console.log("error",e)
     }
-
 }
 //distributeinarray will distribute the element in array
 distributeInArray = (cards, n, k = parseInt(52 / n) + 1) => {
@@ -40,7 +40,9 @@ distributeInArray = (cards, n, k = parseInt(52 / n) + 1) => {
     } catch (e) {
         return "cards are out of bound"
     }
+    
 }
+
 
 //exporting the functions
 module.exports={shuffle,getCards,distributeInArray,distributeInQueue}

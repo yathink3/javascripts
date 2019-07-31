@@ -9,16 +9,16 @@
  * @since : 26-july-2019
  *******************************************************************************************************************/
 //importing stock class
-let stock=require('./utility/stock')
+let Stock=require('./utility/stock')
 //creating stock object
-let s=new stock("./stockReport.json");
+let stock=new Stock("./stockReport.json");
 //buy the stock
-s.buy(100,"mahindra");
+stock.buy(100,"mahindra");
 //selling the stock
-s.sell(100,"apple");
+stock.sell(100,"apple");
 //print report
-s.printReport();
+stock.printReport();
 //save the data back to the file
-s.save();
+stock.save();
 //print valueof
-console.log(s.valueOf());
+console.log(stock.valueOf());
