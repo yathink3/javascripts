@@ -1,16 +1,13 @@
 /*
 creating a class node which will used to store the data and next pointer
 */
-class Data {
-    constructor(name, shares, price) {
-        this.name = name;
-        this.shares = shares;
-        this.price = price;
-    }
-}
 class Node {
-    constructor(name=null, shares=null, price=null) {
-        this.data = new Data(name, shares, price);
+    constructor(name, shares, price) {
+        this.data = {
+            name: name,
+            shares: shares,
+            price: price
+        }
         this.next = null;
     }
 }
@@ -24,13 +21,15 @@ module.exports = class LinkedList {
         this.head = null;
     }
     //push operation will add data to the front of the linkedlist
-    push(name, shares, price) {
-        let newNode = new Node(name, shares, price);
+    firstAdd(data, shares, price) {
+        let newNode;
+        if (arguments.length == 1) newNode = new Node(data.name, data.shares, data.price);
+        else newNode = new Node(data, shares, price);
         newNode.next = this.head;
         this.head = newNode;
     }
     //add operation will add data to the end of the list
-    add(name, shares, price) {
+    lastAdd(name, shares = null, price = null) {
         let newNode = new Node(name, shares, price);
         if (!this.head) this.head = newNode;
         else {
@@ -40,20 +39,20 @@ module.exports = class LinkedList {
         }
     }
     //pop operation will delete the element element at front end returns the element
-    pop() {
+    firstDelete() {
         if (!this.head) return;
         let temp = this.head;
         this.head = this.head.next;
         return temp.data;
     }
     //delete operation will delete the item which is specified by the user
-    delete(name, shares, price) {
+    lastDelete(name) {
         let temp = this.head;
-        if (this.head.data === data)
+        if (this.head.data.name === name)
             this.head = temp.next;
         else {
             let temppre = null;
-            while (temp.data !== data) {
+            while (temp.data.name !== name) {
                 temppre = temp;
                 temp = temp.next;
             }
@@ -70,7 +69,7 @@ module.exports = class LinkedList {
         }
     }
     //getArray operation will returns the array format of linkedlist
-    getArray() {
+    get getArray() {
         let temp = this.head;
         let arr = [];
         while (temp) {
@@ -88,5 +87,54 @@ module.exports = class LinkedList {
     isempty() {
         if (!this.head) return true;
         return false;
+    }
+    //sort operation will sort the linkedlist 
+    sort() {
+        let temp1 = this.head;
+        while (temp1.next) {
+            let temp = this.head;
+            while (temp.next) {
+                if (parseInt(temp.data.name) > parseInt(temp.next.data.name)) {
+                    let value = temp.data;
+                    temp.data = temp.next.data;
+                    temp.next.data = value;
+                }
+                temp = temp.next;
+            }
+            temp1 = temp1.next;
+        }
+    }
+    /*
+    it will check the user enterd element if it is present remove it ,
+    if it is not present add appropriate position
+    */
+    orderedCheck(name) {
+        let temp = this.head;
+        while (temp) {
+            if (temp.data.name === name) {
+                this.lastDelete(name);
+                return console.log('removed data ' + name);
+            }
+            temp = temp.next;
+        }
+        this.lastAdd(name);
+        this.sort();
+        return console.log('added data ' + name);
+    }
+    /*
+    it will check the user enterd element if it is present remove it ,
+    if it is not present add at the end of linked list
+    */
+    isPresentDeleteOrAdd(name) {
+        let temp = this.head;
+        while (temp) {
+            if (temp.data.name === name) {
+                this.delete(name);
+                return console.log('removed data ' + name);
+            }
+            temp = temp.next;
+        }
+        this.add(name);
+        return console.log('added data ' + name);
     }
 }
